@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        
+        <!-- 해야 할 일을 입력할 수 있는 input -->
+        <input type="text" id="todoInput" placeholder="해야 할 일을 작성하세요..." />
+
+        <!-- 해야 할 일 리스트 -->
+        <div class="todo-list">
+            <h2>해야 할 일</h2>
+            <ul id="todoItems"></ul>
+        </div>
+
+        <!-- 해낸 일 리스트 -->
+        <div class="done-list">
+            <h2>해낸 일</h2>
+            <ul id="doneItems"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
