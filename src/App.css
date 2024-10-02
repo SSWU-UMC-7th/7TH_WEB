@@ -1,0 +1,55 @@
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  padding: 10px;
+  font-size: 1rem;
+  flex-grow: 1;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.todo-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-button:hover {
+  background-color: #0056b3;
+}
+
+/* 할 일 리스트 */
+.todo-list {
+  margin-top: 20px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.todo-text {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.edit-input {
+  padding: 5px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
