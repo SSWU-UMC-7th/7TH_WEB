@@ -1,0 +1,61 @@
+/* 기본 설정 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+/* 할일 입력 폼 */
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todo-button {
+  padding: 10px 15px;
+  background-color: #FFCFDA;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.todo-button:hover {
+  background-color: #218838;
+}
+
+/* 할일 리스트 */
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.todo-text {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-input {
+  padding: 5px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+}
