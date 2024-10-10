@@ -1,26 +1,44 @@
-import React from "react";
-import { MOVIES } from "./mocks/movies"; // 영화 데이터 import
-import './App.css'; // CSS 파일 import (위의 CSS 코드가 여기에 포함되어야 함)
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import MovieList from './pages/MovieList';
+import Login from './pages/Login';
+import Search from './pages/Search';
+import Signup from './pages/Signup';
+import styled from 'styled-components';
 
-const MovieList = () => {
-  const twoRowsOfMovies = MOVIES.results.slice(0, 20); // 영화 데이터 가져오기
+const AppContainer = styled.div`
+  display: flex;
+`;
 
+const Content = styled.div`
+  padding : 10px;
+  flex-grow: 1;
+  background-color: #121212;
+  min-height: 100vh;
+  color : white;
+`;
+
+
+
+function App() {
   return (
-    <div>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {twoRowsOfMovies.map((movie) => (
-          <div key={movie.id} className="movie-container">
-            <img
-              className="movie-image"
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
-            />
-            <div className="overlay"></div> {/* 오버레이 추가 */}
-          </div>
-        ))}
-      </div>
-    </div>
+    <Router>
+      <Navbar />
+      <AppContainer>
+        <Sidebar />
+        <Content>
+          <Routes>
+            <Route path="/" element={<MovieList />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/search" element={<Search />} />
+          </Routes>
+        </Content>
+      </AppContainer>
+    </Router>
   );
-};
+}
 
-export default MovieList;
+export default App;
