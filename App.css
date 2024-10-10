@@ -1,6 +1,6 @@
-.movie-container {
+/* .movie-container {
     position: relative; /* 자식 요소의 절대 위치를 설정하기 위해 relative 사용 */
-    display: inline-block; /* 이미지가 한 줄에 나열되도록 설정 */
+    display: inline-block; /* 이미지가 한 줄에 나열되도록 설정 */  
     width:140px;
     height:auto;
     margin:5px;
@@ -24,4 +24,4 @@
   
   .movie-container:hover .overlay {
     opacity: 1; /* 마우스 오버 시 오버레이를 보이게 설정 */
-  }
+  } */
