@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const MovieList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
 `;
 
 const MovieCard = styled.div`

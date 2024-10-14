@@ -6,12 +6,13 @@ import { IoSearchSharp, IoFilmSharp } from "react-icons/io5"; // 영화 아이�
 // Styled Components for Sidebar
 const SidebarContainer = styled.div`
   background-color: black;
-  padding: 10px;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border:none;
+  width: 200px; /* 고정 너비 설정 */
+  min-width: 200px; /* 최소 너비 설정 */
 `;
 
 const StyledLink = styled(Link)`
@@ -21,6 +22,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   margin-bottom: 15px;
   font-size: 16px;
+  margin: 5px 10px 5px 10px;
 `;
 
 const IconWrapper = styled.div`

@@ -73,7 +73,7 @@ const CategoryPage = () => {
           <OverlayText>높은 평가를 받은</OverlayText>
         </PhotoCard>
         </Link>
-        <Link to='/movies'>
+        <Link to='/up-coming'>
         <PhotoCard>
           <PhotoGroup
             src={'https://search.pstatic.net/common/?src=http%3A%2F%2Fpost.phinf.naver.net%2FMjAyMDExMThfMTA0%2FMDAxNjA1Njc4OTk5OTM3.xStePeLg4yFl6mUTBfiLFzaXl8tOvJeIWbZQtfaQE9Qg.BV7CF2oIpi9DeyAT4RwkjPX1dX_3oM3hqf1Eie-ps78g.PNG%2FInXvrbn0muogN_PyDsKZH_uyUipY.jpg&type=sc960_832'}
