@@ -2,14 +2,6 @@ import React, { useState, useEffect } from "react";
 import { UpComing } from "../movies/up-coming"; // 영화 데이터 import
 import styled from 'styled-components';
 
-const UpComingPage = () => {
-  return (
-    <div>
-      <h1>개봉 예정중인 영화!</h1>
-    </div>
-  );
-};
-
 const MovieList = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -65,12 +57,12 @@ const MovieReleaseDate = styled.p`
   margin: 0;
 `;
 
-const MoviesPage = () => {
-  const [movies, setMovies] = useState([]);
+const UpComingPage = () => {
+    const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    setMovies(MOVIES.results); // 영화 데이터를 MOVIES에서 가져오기
-  }, []);
+    useEffect(()=>{
+        setMovies(UpComing.results);
+    },[]);
 
   return (
     <MovieList>

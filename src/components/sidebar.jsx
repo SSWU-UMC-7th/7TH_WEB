@@ -12,7 +12,6 @@ const SidebarContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   border:none;
-  
 `;
 
 const StyledLink = styled(Link)`
