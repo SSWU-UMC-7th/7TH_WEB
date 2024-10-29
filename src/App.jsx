@@ -11,14 +11,17 @@ import NowPlayingPage from './pages/now-playing.jsx';
 import TopRatedPage from './pages/top-rated.jsx';
 import UpComingPage from './pages/up-coming.jsx';
 import PopularPage from './pages/popular.jsx';
+import MovieDetail from './pages/MovieDetail';
+import NotFound from "./pages/not-found";
 
 // 라우터 설정
 const router = createBrowserRouter([
   {
     path: '/', // 루트 경로 (홈페이지)
     element: <RootLayout />, // 모든 페이지를 감싸는 레이아웃 컴포넌트
+    errorElement:<NotFound/>,
     children: [
-      { path: '/', element: <HomePage /> }, // 홈 페이지
+      { index:true, element: <HomePage /> }, // 홈 페이지
       { path: '/movies', element: <MoviesPage /> }, // 영화 목록 페이지
       { path: '/login', element: <LoginPage /> },
       { path: '/search', element: <SearchPage /> },
@@ -27,7 +30,8 @@ const router = createBrowserRouter([
       { path: '/now-playing',element: <NowPlayingPage/>},
       { path: '/popular', element:<PopularPage/>},
       { path: '/up-coming', element:<UpComingPage/>},
-      { path: '/top-rated', element:<TopRatedPage/>}
+      { path: '/top-rated', element:<TopRatedPage/>},
+      { path: '/movies/:movieId', element:<MovieDetail/>}
     ],
   },
 ]);
