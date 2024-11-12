@@ -1,26 +1,62 @@
-import React from "react";
-import { MOVIES } from "./mocks/movies"; // 영화 데이터 import
-import './App.css'; // CSS 파일 import (위의 CSS 코드가 여기에 포함되어야 함)
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import MovieList from './pages/MovieList';
+import Login from './pages/Login';
+import Search from './pages/Search';
+import Signup from './pages/Signup';
+import MovieCategory from './pages/MovieCategory';
+import NowPlaying from './movies/NowPlaying';
+import Popular from './movies/Popular';
+import TopRated from './movies/TopRated';
+import UpComing from './movies/UpComing';
+import MovieDetail from './pages/MovieDetail';
+import styled from 'styled-components';
+import { AuthProvider } from './components/AuthContext';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-const MovieList = () => {
-  const twoRowsOfMovies = MOVIES.results.slice(0, 20); // 영화 데이터 가져오기
+const AppContainer = styled.div`
+  display: flex;
+`;
 
+const Content = styled.div`
+  padding : 10px;
+  flex-grow: 1;
+  background-color: #121212;
+  min-height: 100vh;
+  color : white;
+`;
+
+const queryClient = new QueryClient();
+
+function App() {
   return (
-    <div>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {twoRowsOfMovies.map((movie) => (
-          <div key={movie.id} className="movie-container">
-            <img
-              className="movie-image"
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
-            />
-            <div className="overlay"></div> {/* 오버레이 추가 */}
-          </div>
-        ))}
-      </div>
-    </div>
+    <QueryClientProvider client={queryClient}>
+    <AuthProvider>
+    <Router>
+      <Navbar />
+      <AppContainer>
+        <Sidebar />
+        <Content>
+          <Routes>
+            <Route path="/" element={<MovieList />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/movieCategory" element={<MovieCategory />} />
+            <Route path="/movies/now-playing" element={<NowPlaying />} />
+            <Route path="/movies/popular" element={<Popular />}/>
+            <Route path="/movies/top-rated" element={<TopRated />}/>
+            <Route path="/movies/up-coming" element={<UpComing />}/>
+            <Route path="/movies/:movieId" element={<MovieDetail />} />
+          </Routes>
+        </Content>
+      </AppContainer>
+    </Router>
+    </AuthProvider>
+    </QueryClientProvider>
   );
-};
+}
 
-export default MovieList;
+export default App;
